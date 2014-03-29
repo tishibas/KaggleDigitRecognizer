@@ -23,7 +23,6 @@ tuned_parameters = [
         ]
 clf = GridSearchCV(svm.SVC(),tuned_parameters,n_jobs=3)
 clf.fit(X_train_minmax,Y,cv=5)
-_ = joblib.dump(clf, "model.pkl", compress=3)
 print clf.best_estimator_
 print clf.best_score_
 print clf.grid_scores_
